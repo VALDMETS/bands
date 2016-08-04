@@ -30,13 +30,14 @@ const SearchArtist = React.createClass({
     });
     console.log(newBand);
     if (store.voteList.get(newBand.get('spotifyId'))) {
-      let bandInVoteList = store.voteList.get(newBand.get('spotifyId'));
-      let voteAdder = bandInVoteList.get('votes');
-      voteAdder.push(store.session.get('username'));
-      bandInVoteList.save({votes: voteAdder}).then(() => {
-        hashHistory.push('/main');
-        store.voteList.fetch();
-      });
+      store.voteList.get(newBand.get('spotifyId')).voteToggle();
+      // let bandInVoteList = store.voteList.get(newBand.get('spotifyId'));
+      // let voteAdder = bandInVoteList.get('votes');
+      // voteAdder.push(store.session.get('username'));
+      // bandInVoteList.save({votes: voteAdder}).then(() => {
+      //   hashHistory.push('/main');
+      //   store.voteList.fetch();
+      // });
     } else {
       newBand.save().then(() => {
         hashHistory.push('/main');

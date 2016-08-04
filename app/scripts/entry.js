@@ -20,7 +20,7 @@ store.session.save({username: 'anonymous', password: 'password'}, {
   success: function (user, resp) {
     store.session.unset('password');
     store.session.set({
-      username: 'admin',
+      username: 'rad_dad',
       authtoken: resp._kmd.authtoken
     });
     // VVV TEMPORARY VVV

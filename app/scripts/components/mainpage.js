@@ -9,16 +9,19 @@ const MainPage = React.createClass({
     return {}
   },
   render: function() {
-    console.log(this.state);
-    let bandList = _.map(this.state, function(band, i){
-      return <RankArtist key={i} info={band} />
-    });
-    return(
-      <div className="rank-page">
-        <h2>TOP ARTISTS FOR SCHLUBB'S BBQ STAGE</h2>
-        {bandList}
-      </div>
-    )
+    if (this.state) {
+      let bandList = _.map(this.state, function(band, i){
+        return <RankArtist key={i} info={band} />
+      });
+      return(
+        <div className="rank-page">
+          <h2>TOP ARTISTS FOR SCHLUBB'S BBQ STAGE</h2>
+          {bandList}
+        </div>
+      )
+    } else {
+      return null;
+    }
   },
   componentDidMount: function() {
     store.voteList.on('update', this.updateFunction)
@@ -27,7 +30,7 @@ const MainPage = React.createClass({
     store.voteList.off('update', this.updateFunction)
   },
   updateFunction: function() {
-    this.setState(store.voteList.toJSON())
+    this.setState(store.voteList.toJSON());
   },
 });
 
