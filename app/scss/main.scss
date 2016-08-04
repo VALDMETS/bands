@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-.search-artist {
+.search-artist, .rank-artist {
   display: block;
   position: relative;
   width: 100%;
@@ -32,5 +32,21 @@ body {
     display: block;
     top: 20px;
     left: 80px;
+  }
+  .vote-total {
+    left: -30px;
+  }
+  .voted-arrow {
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: -45px;
+    border: none;
+    border-radius: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 36px solid red;
   }
 }

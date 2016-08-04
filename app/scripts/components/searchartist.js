@@ -30,11 +30,19 @@ const SearchArtist = React.createClass({
     });
     console.log(newBand);
     if (store.voteList.get(newBand.get('spotifyId'))) {
-      console.log('caught in the act');
-      hashHistory.push('/main');
+      let bandInVoteList = store.voteList.get(newBand.get('spotifyId'));
+      let voteAdder = bandInVoteList.get('votes');
+      voteAdder.push(store.session.get('username'));
+      bandInVoteList.save({votes: voteAdder}).then(() => {
+        hashHistory.push('/main');
+        store.voteList.fetch();
+      });
     } else {
-      newBand.save();
-      hashHistory.push('/main');
+      newBand.save().then(() => {
+        hashHistory.push('/main');
+        store.voteList.fetch();
+      });
+
     }
   }
 });
