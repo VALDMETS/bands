@@ -12,7 +12,7 @@ const SearchPage = React.createClass({
     };
   },
   render: function() {
-    console.log(this.state.artists.items);
+    // console.log(this.state.artists.items);
     let searchList = this.state.artists.items.map(function(artist,i){
       return <SearchArtist key={i} info={artist} />
     });

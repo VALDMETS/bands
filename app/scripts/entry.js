@@ -23,12 +23,15 @@ store.session.save({username: 'anonymous', password: 'password'}, {
       username: 'anonymous',
       authtoken: resp._kmd.authtoken
     });
+    // VVV TEMPORARY VVV
+    store.voteList.fetch().then(function(){
+      console.log(store.voteList);
+    });
+
   },
   error: function () {
     console.log('Whoops! Looks like you need to sign up.');
   }
 });
-
-
 
 ReactDOM.render(router, document.getElementById('container'))

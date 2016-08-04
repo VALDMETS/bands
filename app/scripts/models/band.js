@@ -14,7 +14,7 @@ const Band = Bb.Model.extend({
     popularity: 0,
     externalUrl: ''
   },
-  idAttribute: '_id'
+  idAttribute: 'spotifyId'
 });
 
 export default Band;

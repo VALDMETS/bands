@@ -6,7 +6,6 @@ import settings from '../settings';
 const Session = Bb.Model.extend({
   defaults: {
     username: 'anonymous',
-    // password: 'password'
     authtoken: '',
     signupDate: ''
   },
