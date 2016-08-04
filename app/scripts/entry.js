@@ -20,12 +20,12 @@ store.session.save({username: 'anonymous', password: 'password'}, {
   success: function (user, resp) {
     store.session.unset('password');
     store.session.set({
-      username: 'rad_dad',
+      username: 'FLEXX',
       authtoken: resp._kmd.authtoken
     });
     // VVV TEMPORARY VVV
     store.voteList.fetch().then(function(){
-      console.log(store.voteList);
+
     });
 
   },

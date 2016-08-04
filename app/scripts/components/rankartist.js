@@ -13,7 +13,7 @@ const RankArtist = React.createClass({
       }
     });
     return (
-      <div className="rank-artist" id={this.props.info.spotifyId}>
+      <div onClick={this.clickHandler} className="rank-artist" id={this.props.info.spotifyId}>
         {votedArrow}
         <span className="vote-total">{this.props.info.votes.length}</span>
         <div>
@@ -23,24 +23,9 @@ const RankArtist = React.createClass({
       </div>
     )
   },
-  // clickHandler: function() {
-  //   let newBand = new Band ({
-  //     name: this.props.info.name,
-  //     spotifyId: this.props.info.id,
-  //     imageUrl: this.props.info.images[0].url,
-  //     popularity: this.props.info.popularity,
-  //     externalUrl: this.props.info.external_urls.spotify,
-  //     votes: [store.session.get('username')]
-  //   });
-  //   console.log(newBand);
-  //   if (store.voteList.get(newBand.get('spotifyId'))) {
-  //     console.log('caught in the act');
-  //     hashHistory.push('/main');
-  //   } else {
-  //     newBand.save();
-  //     hashHistory.push('/main');
-  //   }
-  // }
+  clickHandler: function() {
+    store.voteList.get(this.props.info.spotifyId).voteToggle();
+  }
 });
 
 export default RankArtist;
