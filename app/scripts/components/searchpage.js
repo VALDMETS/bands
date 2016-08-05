@@ -1,6 +1,7 @@
 import React from 'react';
 
 import store from '../store';
+import Header from './header';
 import SearchArtist from './searchartist';
 
 const SearchPage = React.createClass({
@@ -25,6 +26,7 @@ const SearchPage = React.createClass({
     }
     return (
       <div className="search-page">
+        <Header/>
         <form onSubmit={this.submitFunction}>
           <input type="text" ref="searchinput" placeholder="Search for your favorite Artist!"/>
           <input type="submit" value="Go!"/>
@@ -32,6 +34,7 @@ const SearchPage = React.createClass({
         <ul className="search-results">
           {searchList}
         </ul>
+        {this.props.children}
       </div>
     )
   },
