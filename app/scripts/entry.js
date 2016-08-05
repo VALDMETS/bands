@@ -6,6 +6,8 @@ import store from './store';
 import settings from './settings';
 import router from './components/router';
 
+location.hash = 'main';
+
 $(document).ajaxSend(function(e, xhr, jqueryAjax){
   if (!jqueryAjax.url.includes('spotify')) {
     if (store.session.get('authtoken')) {
@@ -16,22 +18,6 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
   }
 });
 
-store.session.save({username: 'anonymous', password: 'password'}, {
-  success: function (user, resp) {
-    store.session.unset('password');
-    store.session.set({
-      username: 'FLEXX',
-      authtoken: resp._kmd.authtoken
-    });
-    // VVV TEMPORARY VVV
-    store.voteList.fetch().then(function(){
-
-    });
-
-  },
-  error: function () {
-    console.log('Whoops! Looks like you need to sign up.');
-  }
-});
+settings.anonymousLogin();
 
 ReactDOM.render(router, document.getElementById('container'))

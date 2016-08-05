@@ -7,6 +7,7 @@ import Overlay from './overlay';
 import About from './about';
 import Login from './login';
 import Signup from './signup';
+import Logout from './logout';
 
 const router = (
   <Router history={hashHistory}>
@@ -15,6 +16,7 @@ const router = (
         <Route path="about" component={About}/>
         <Route path="login" component={Login}/>
         <Route path="signup" component={Signup}/>
+        <Route path="logout" component={Logout}/>
       </Route>
     </Route>
     <Route path="/find" component={SearchPage}>
@@ -22,6 +24,7 @@ const router = (
         <Route path="about" component={About}/>
         <Route path="login" component={Login}/>
         <Route path="signup" component={Signup}/>
+        <Route path="logout" component={Logout}/>
       </Route>
     </Route>
   </Router>

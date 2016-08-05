@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import store from '../store';
 
 const Header = React.createClass({
   render: function() {
     let rootPage = location.hash.slice(1,6) + '/overlay/';
     let aboutLink = rootPage + 'about';
     let loginLink = rootPage + 'login';
-    let signupLink = rootPage + 'signup';
+    let loginHTML = <li><Link to={loginLink}>Login</Link></li>
+    if (store.session.get('username') !== 'anonymous') {
+      loginLink = rootPage + 'logout';
+      loginHTML = <li><Link to={loginLink}>Logout</Link></li>
+    }
     let artistSearch = <Link to="/find">Artist Search</Link>;
     if (location.hash.indexOf('find') !== -1) {
       artistSearch = '';
@@ -15,8 +20,7 @@ const Header = React.createClass({
       <header>
         <div className="nav-menu">
           <li><Link to={aboutLink}>About</Link></li>
-          <li><Link to={loginLink}>Login</Link></li>
-          <li><Link to={signupLink}>Signup</Link></li>
+          {loginHTML}
           <h2 onClick={this.homeFunction}>Schlubb's Logo!</h2>
           {artistSearch}
         </div>
