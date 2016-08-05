@@ -6,10 +6,20 @@ body {
 .search-artist, .rank-artist {
   display: block;
   position: relative;
+  box-sizing: border-box;
   width: 100%;
-  height: 60px;
+  height: 70px;
+  padding: 5px 0 12px 0;
   vertical-align: top;
-  margin: 10px 0 10px 50px; }
+  margin: 0 0 0 50px;
+  cursor: pointer;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transition: .5s; }
+  .search-artist:hover, .rank-artist:hover {
+    background-color: #C3C3C3;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white; }
   .search-artist div, .rank-artist div {
     display: inline-block;
     border: 1px solid #EEE;
@@ -26,14 +36,15 @@ body {
     font-size: 20px;
     position: absolute;
     display: block;
-    top: 20px;
+    top: 22px;
     left: 80px; }
   .search-artist .vote-total, .rank-artist .vote-total {
-    left: -30px; }
+    left: -30px;
+    font-size: 18px; }
   .search-artist .voted-arrow, .rank-artist .voted-arrow {
     position: absolute;
     display: block;
-    top: 8px;
+    top: 10px;
     left: -45px;
     border: none;
     border-radius: 0;
@@ -41,6 +52,6 @@ body {
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-bottom: 36px solid red; }
+    border-bottom: 36px solid #D53838; }
 
 /*# sourceMappingURL=main.css.map */
