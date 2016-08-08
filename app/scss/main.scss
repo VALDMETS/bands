@@ -57,8 +57,10 @@ header {
     left: 80px;
   }
   .vote-total {
+    display: inline;
     left: -30px;
     font-size: 18px;
+    text-align: center;
   }
   .voted-arrow {
     position: absolute;

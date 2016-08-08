@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 import store from '../store';
 
@@ -24,7 +25,11 @@ const RankArtist = React.createClass({
     )
   },
   clickHandler: function() {
-    store.voteList.get(this.props.info.spotifyId).voteToggle();
+    if (store.session.get('username') != 'anonymous' ) {
+      store.voteList.get(this.props.info.spotifyId).voteToggle();
+    } else {
+      hashHistory.push('/main/overlay/login');
+    }
   }
 });
 

@@ -20,30 +20,26 @@ const SearchArtist = React.createClass({
     )
   },
   clickHandler: function() {
-    let newBand = new Band ({
-      name: this.props.info.name,
-      spotifyId: this.props.info.id,
-      imageUrl: this.props.info.images[0].url,
-      popularity: this.props.info.popularity,
-      externalUrl: this.props.info.external_urls.spotify,
-      votes: [store.session.get('username')]
-    });
-    console.log(newBand);
-    if (store.voteList.get(newBand.get('spotifyId'))) {
-      store.voteList.get(newBand.get('spotifyId')).voteToggle();
-      // let bandInVoteList = store.voteList.get(newBand.get('spotifyId'));
-      // let voteAdder = bandInVoteList.get('votes');
-      // voteAdder.push(store.session.get('username'));
-      // bandInVoteList.save({votes: voteAdder}).then(() => {
-      //   hashHistory.push('/main');
-      //   store.voteList.fetch();
-      // });
-    } else {
-      newBand.save().then(() => {
-        hashHistory.push('/main');
-        store.voteList.fetch();
+    if (store.session.get('username') != 'anonymous') {
+      let newBand = new Band ({
+        name: this.props.info.name,
+        spotifyId: this.props.info.id,
+        imageUrl: this.props.info.images[0].url,
+        popularity: this.props.info.popularity,
+        externalUrl: this.props.info.external_urls.spotify,
+        votes: [store.session.get('username')]
       });
-
+      console.log(newBand);
+      if (store.voteList.get(newBand.get('spotifyId'))) {
+        store.voteList.get(newBand.get('spotifyId')).voteToggle();
+      } else {
+        newBand.save().then(() => {
+          hashHistory.push('/main');
+          store.voteList.fetch();
+        });
+      }
+    } else {
+      hashHistory.push('/find/overlay/login');
     }
   }
 });
