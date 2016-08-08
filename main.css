@@ -50,8 +50,10 @@ header {
     top: 22px;
     left: 80px; }
   .search-artist .vote-total, .rank-artist .vote-total {
+    display: inline;
     left: -30px;
-    font-size: 18px; }
+    font-size: 18px;
+    text-align: center; }
   .search-artist .voted-arrow, .rank-artist .voted-arrow {
     position: absolute;
     display: block;
