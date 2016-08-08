@@ -7,21 +7,21 @@ const Header = React.createClass({
     let rootPage = location.hash.slice(1,6) + '/overlay/';
     let aboutLink = rootPage + 'about';
     let loginLink = rootPage + 'login';
-    let loginHTML = <li><Link to={loginLink}>Login</Link></li>
+    let loginHTML = <Link className="login-button" to={loginLink}>Login</Link>
     if (store.session.get('username') !== 'anonymous') {
       loginLink = rootPage + 'logout';
-      loginHTML = <li><Link to={loginLink}>Logout</Link></li>
+      loginHTML = <Link className="login-button" to={loginLink}>Logout</Link>
     }
-    let artistSearch = <Link to="/find">Artist Search</Link>;
+    let artistSearch = <Link className="artist-search" to="/find">Artist Search</Link>;
     if (location.hash.indexOf('find') !== -1) {
       artistSearch = '';
     }
     return (
       <header>
         <div className="nav-menu">
-          <li><Link to={aboutLink}>About</Link></li>
+          <Link className="about" to={aboutLink}>About</Link>
           {loginHTML}
-          <h2 onClick={this.homeFunction}>Schlubb's Logo!</h2>
+          <h2 onClick={this.homeFunction}>Schlubb's</h2>
           {artistSearch}
         </div>
       </header>
