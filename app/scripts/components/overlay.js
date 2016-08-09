@@ -6,7 +6,7 @@ const Overlay = React.createClass({
     return (
       <div className="overlay">
         <div className="overlay-window">
-          <input type="button" onClick={this.escapeFunction} value="X"/>
+          <input type="button" onClick={this.escapeFunction} className="escape" value="x"/>
           {this.props.children}
         </div>
       </div>
