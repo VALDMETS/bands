@@ -8,9 +8,4 @@ const BandSearch = Bb.Model.extend({
   }
 });
 
-// let bandSearch = new BandSearch();
-// bandSearch.fetch();
-//
-// console.log(bandSearch);
-
 export default BandSearch;

@@ -44,6 +44,7 @@ const Band = Bb.Model.extend({
       });
 
     }
+  return true;
   },
 });
 

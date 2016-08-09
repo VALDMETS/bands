@@ -38,7 +38,7 @@ const Signup = React.createClass({
       },
       error: () => {
         store.session.set({username: 'anonymous'});
-        this.incorrectAlert = <p>Sorry, your username is taken. Please try another one.</p>;
+        this.incorrectAlert = <p className="incorrect-alert">Sorry, your username is taken. Please try another one.</p>;
         this.setState({change: true});
       }
     });
