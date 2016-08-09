@@ -244,6 +244,9 @@ footer {
       top: 60px;
       left: 20px; }
 
+  h2 {
+    font-size: 40px; }
+
   #container {
     display: block;
     margin: 0 auto;
@@ -261,21 +264,30 @@ footer {
 
   footer {
     position: aboslute;
-    bottom: 10px;
+    bottom: 4px;
     left: 0; }
 
   .rank-container .rank-artist {
     padding: 0;
     height: 240px;
-    margin: 9px 0; }
+    margin: 14px 0;
+    border-top: 1px solid #4B7895;
+    border-bottom: 1px solid #4B7895; }
+    .rank-container .rank-artist:hover {
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      background: rgba(192, 192, 192, 0.3); }
     .rank-container .rank-artist div {
       height: 100%;
       border: none;
       border-radius: 0;
       width: 62%; }
       .rank-container .rank-artist div img {
+        position: relative;
+        top: -70px;
+        left: -40px;
         height: auto;
-        width: 100%;
+        width: 110%;
         object-fit: cover; }
     .rank-container .rank-artist span {
       display: block;
@@ -283,7 +295,7 @@ footer {
       text-transform: uppercase;
       font-style: italic;
       top: 40px;
-      left: 507px;
+      left: 505px;
       font-size: 28px;
       padding: 3px 0;
       border-bottom: 2px solid #4B7895;
@@ -312,7 +324,7 @@ footer {
 
   .overlay .overlay-window {
     width: 60%;
-    height: 50%;
+    height: 60%;
     left: 20%;
     top: 20%;
     box-shadow: 0 0 50px #C1FFFF; }
