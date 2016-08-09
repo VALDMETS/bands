@@ -6,7 +6,7 @@ import Band from '../models/band';
 
 const SearchArtist = React.createClass({
   render: function() {
-    let bandPic = 'http://www.iconsdb.com/icons/preview/orange/question-mark-4-xl.png';
+    let bandPic = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Question_Mark.svg/2000px-Question_Mark.svg.png';
     if (this.props.info.images.length) {
       bandPic = this.props.info.images[0].url
     }

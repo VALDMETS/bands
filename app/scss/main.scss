@@ -23,7 +23,7 @@ header {
   background: linear-gradient(black, #1D1D1D);
   // border-bottom: 1px solid #C1FFFF;
   box-shadow: 0 2px 10px #09E8E8;
-  z-index: 3;
+  z-index: 4;
   a {
     font-size: 15px;
     display: block;
@@ -109,8 +109,11 @@ header {
       // display: block;
       text-align: center;
       margin: auto;
-      max-width: 120px;
-      max-height: 120px;
+      width: 100%;
+      height: 60px;
+      object-fit: cover;
+      // max-width: 120px;
+      // max-height: 120px;
     }
   }
   span {
@@ -126,6 +129,7 @@ header {
     left: 20px;
     font-size: 18px;
     text-align: center;
+    z-index: 3;
   }
   .voted-arrow {
     position: absolute;
@@ -139,6 +143,7 @@ header {
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 36px solid #09E8E8;
+    z-index: 2;
   }
 }
 .search-page {
@@ -163,6 +168,7 @@ header {
     }
   }
   .search-blurb {
+    margin-top: 3 0vh;
     color: gray;
     text-align: center;
     font-size: 16px;
@@ -175,6 +181,7 @@ header {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 5;
   .overlay-window {
     position: absolute;
     width: 80%;
@@ -206,6 +213,44 @@ header {
         text-shadow: 0 0 3px #09E8E8;
       }
     }
+    h3 {
+      font-size: 26px;
+      font-style: italic;
+      margin: 42px 0;
+      text-align: center;
+    }
+    p {
+      width: 80%;
+      margin: 20px auto;
+      a {
+        color: #09E8E8;
+      }
+    }
+    form {
+      input {
+        display: block;
+        width: 60%;
+        background: rgba(192, 192, 192, .1);
+        border: 2px solid #09E8E8;
+        padding: 3px;
+        font-size: 18px;
+        text-align: center;
+        color: white;
+        margin: 10px auto;
+      }
+      [type="submit"] {
+        width: 40%;
+        cursor: pointer;
+      }
+      .incorrect-alert {
+        color: red;
+      }
+    }
+    div {
+      p {
+        text-align: center;
+      }
+    }
   }
 }
 footer {
@@ -220,5 +265,112 @@ footer {
   text-align: center;
   a {
     color: #09E8E8;
+  }
+}
+@media (min-width: 800px) {
+  header {
+    height: 110px;
+    box-shadow: none;
+    border-bottom: 3px solid #C1FFFF;
+    background: linear-gradient(#4B7895, #3F6278);
+    h2 {
+      font-size: 66px;
+    }
+    a {
+      font-size: 20px;
+    }
+    .about {
+      top: 20px;
+      left: 20px;
+    }
+    .login-button {
+      top: 60px;
+      left: 20px;
+    }
+  }
+  #container {
+    display: block;
+    margin: 0 auto;
+    width: 800px;
+    box-shadow: 0 0 30px #4B7895;
+  }
+  .rank-page {
+    padding: 110px 0 60px 0;
+  }
+  .search-results {
+    padding: 30px 0 60px 0;
+  }
+  .search-page form {
+    padding-top: 50px;
+  }
+  footer {
+    position: aboslute;
+    bottom: 10px;
+    left: 0;
+  }
+  .rank-container {
+    .rank-artist {
+      padding: 0;
+      height: 240px;
+      margin: 9px 0;
+      div {
+        height: 100%;
+        border: none;
+        border-radius: 0;
+        width: 62%;
+        img {
+          height: auto;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      span {
+        display: block;
+        width: 36%;
+        text-transform: uppercase;
+        font-style: italic;
+        top: 40px;
+        left: 507px;
+        font-size: 28px;
+        padding: 3px 0;
+        border-bottom: 2px solid #4B7895;
+        border-top: 2px solid #4B7895;
+      }
+      .vote-total {
+        border-top: none;
+        border-bottom: none;
+        text-transform: none;
+        font-size: 28px;
+        right: -138px;
+        top: 118px;
+        &:after {
+          content: ' votes';
+          font-size: 20px;
+        }
+        &:before {
+          content: 'with ';
+          font-size: 20px;
+        }
+      }
+      .voted-arrow {
+        top: 100px;
+        left: 600px;
+        border-left: 52px solid transparent;
+        border-right: 52px solid transparent;
+        border-bottom: 80px solid #4B7895;
+        width: 0px;
+        height: 0px;
+      }
+    }
+  }
+  .overlay .overlay-window {
+    width: 60%;
+    height: 50%;
+    left: 20%;
+    top: 20%;
+    box-shadow: 0 0 50px #C1FFFF;
+  }
+  .overlay {
+    top: 113px;
   }
 }

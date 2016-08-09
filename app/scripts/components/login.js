@@ -36,7 +36,7 @@ const Login = React.createClass({
       },
       error: () => {
         store.session.set({username: 'anonymous'});
-        this.incorrectAlert = <p>Sorry, your username or password was incorrect. Please try again!</p>;
+        this.incorrectAlert = <p className="incorrect-alert">Sorry, your username or password was incorrect. Please try again!</p>;
         this.setState({change: true});
       }
     });
